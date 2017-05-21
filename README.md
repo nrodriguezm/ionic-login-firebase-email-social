@@ -17,7 +17,7 @@ TODO
 
 ## Instalacion
 1. cli> npm install -g cordova
-2. cli> npm install -g ionic
+2. cli> npm install -g ionic@latest
 3. cli> ionic start ionic-login-firebase blank
 4. cli> cd ionic-login-firebase
 5. cli> copiar contenidos de este repositorio, sustituyendo carpeta src y archivo package.json
@@ -31,15 +31,17 @@ TODO
 >  storageBucket: "your-domain-name.appspot.com",  
 >  messagingSenderId: '<your-messaging-sender-id>'  
 > };  
-
-8. Configurar en consola de firebase tipo de autenticacion, activar Facebook y Mail
+8. Configurar en consola de firebase tipo de autenticacion, activar Facebook y Mail. Necesitamos para Facebook ID y secreto de la app. Copiamos haciendo clic en Editar en el metodo Facebook, la URL de redireccionamiento OAuth, algo asi: "https://xxxx.firebaseapp.com/__/auth/handler"
 9. Crear app en Facebook: https://developers.facebook.com/apps
-10. Activar servicio de Login para la app en Facebook
-11. Pegar URL de Firebase para callback de login
-12. cli> ionic plugin add cordova-plugin-facebook4 --variable APP_ID="123456789" --variable APP_NAME="myApplication" --save
-13. Obtener ID y alias de la app
-14. cli> ionic serve
-15. Profit!
+10. Activar servicio de Inicio de Sesion para la app en Facebook, en ir a Agregar Producto.
+11. Activar las tres opciones de OAuth. Pegar URL de Firebase para callback de login en campo de URL de redireccionamiento y Guardar Cambios. 
+12. Copiamos desde el Panel de App de Facebook el ID (Identificados de la aplicacion, APP_ID) y Clave secreta, pegamos ambos valores en consola de Firebase y guardamos. 
+13. cli> ionic plugin add cordova-plugin-facebook4 --variable APP_ID="123456789" --variable APP_NAME="myApplication" --save
+14. Obtener ID y alias de la app
+15. cli> ionic serve
+16. Profit!
+
+Con esto podemos probar la app desde nuestro navegador en forma local, para poder publicar la app debemos agregar en la Configuracion de la App en Facebook, la plataforma Android en Configuracion y luego agregar el nombre de la App con la que publicamos en Android (identificador definido en config.xml en Ionic) y el hash de la clave con la cual firmamos el release de la app para poder subir a Play Store.
 
 ## Requiere
 
