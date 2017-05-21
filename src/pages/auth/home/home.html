@@ -1,0 +1,23 @@
+<ion-content class="auth-home" padding>
+  <div class="logo">
+    <div class="logo-icon">
+      <img src="assets/images/logo.png" />     
+    </div>
+    
+  </div>
+
+
+  <button ion-button block class="facebook-btn" (click)="loginUserWithFacebook()">
+    <ion-icon name="logo-facebook"></ion-icon>
+    Acceder con Facebook
+  </button>
+
+
+  <button ion-button color="light" class="sign-up-btn" (click)="openSignUpPage()">Registrarme</button>
+  <button ion-button color="light" class="log-in-btn" (click)="openLoginPage()" color="secondary">Acceder</button>
+
+  <div padding class="error" *ngIf="error">
+    <p>{{error}}</p>
+  </div>
+
+</ion-content>
