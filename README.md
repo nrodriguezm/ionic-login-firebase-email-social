@@ -31,17 +31,17 @@ TODO
 >  storageBucket: "your-domain-name.appspot.com",  
 >  messagingSenderId: '<your-messaging-sender-id>'  
 > };  
-8. Configurar en consola de firebase tipo de autenticacion, activar Facebook y Mail. Necesitamos para Facebook ID y secreto de la app. Copiamos haciendo clic en Editar en el metodo Facebook, la URL de redireccionamiento OAuth, algo asi: "https://xxxx.firebaseapp.com/__/auth/handler"
+8. Configurar en consola de firebase tipo de autenticacion, activar Facebook e Email. Necesitamos para metodo Facebook el ID y secreto de la app que obtendremos en los siguientes pasos.
 9. Crear app en Facebook: https://developers.facebook.com/apps
 10. Activar servicio de Inicio de Sesion para la app en Facebook, en ir a Agregar Producto.
-11. Activar las tres opciones de OAuth. Pegar URL de Firebase para callback de login en campo de URL de redireccionamiento y Guardar Cambios. 
-12. Copiamos desde el Panel de App de Facebook el ID (Identificados de la aplicacion, APP_ID) y Clave secreta, pegamos ambos valores en consola de Firebase y guardamos. 
-13. cli> ionic plugin add cordova-plugin-facebook4 --variable APP_ID="123456789" --variable APP_NAME="myApplication" --save
+11. Activar las tres opciones de OAuth. Pegar URL de Firebase para callback de login en campo de URL de redireccionamiento y Guardar Cambios. Esta URL la obtenemos desde la consola de Firebase al editar el metodo Facebook.
+12. Copiamos desde el Panel de App de Facebook el ID (Identificados de la aplicacion, APP_ID) y Clave secreta, pegamos ambos valores en consola de Firebase y guardamos. En el siguiente paso ingresaremos el mismo ID y el nombre de la App (NO es el secreto de la App de Facebook) que aparece en el Panel de inicio.
+13. cli> cordova plugin add cordova-plugin-facebook4 --variable APP_ID="123456789" --variable APP_NAME="myApplication" --save
 14. Obtener ID y alias de la app
 15. cli> ionic serve
 16. Profit!
 
-Con esto podemos probar la app desde nuestro navegador en forma local, para poder publicar la app debemos agregar en la Configuracion de la App en Facebook, la plataforma Android en Configuracion y luego agregar el nombre de la App con la que publicamos en Android (identificador definido en config.xml en Ionic) y el hash de la clave con la cual firmamos el release de la app para poder subir a Play Store.
+Con esto podemos probar la app desde nuestro navegador en forma local, para poder publicar la app debemos agregar en la Configuracion de la App en Facebook la plataforma Android en Configuracion y luego agregar el nombre de la App con la que publicamos en Android (identificador definido en config.xml en Ionic) y el hash de la clave con la cual firmamos el release de la app para poder subir a Play Store. Para terminar debemos publicar la app en el panel de Facebook ya que por defecto viene en modo desarrollo.
 
 ## Requiere
 
