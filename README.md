@@ -6,26 +6,35 @@ Utiliza
 * AngularFire2 4.0
 * Lazy Loading
 
-# Instalacion
-1. npm install -g cordova
-2. npm install -g ionic
-3. ionic start ionic-login-firebase blank
-4. cd ionic-login-firebase
-5. npm install angularfire2 firebase --save
+## Instalacion
+1. cli> npm install -g cordova
+2. cli> npm install -g ionic
+3. cli> ionic start ionic-login-firebase blank
+4. cli> cd ionic-login-firebase
+5. cli> copiar contenidos de este repositorio, sustituyendo carpeta src y archivo package.json
+6. cli> npm install
+7. Crear proyecto en consola Firebase, obtener credencales para aplicacion web y sustituir en app.module.ts
 
-Crear proyecto en consola Firebase, obtener credencales para aplicacion web:
+> export const firebaseConfig = {
+>  apiKey: "xxxxxxxxxx",
+>  authDomain: "your-domain-name.firebaseapp.com",
+>  databaseURL: "https://your-domain-name.firebaseio.com",
+>  storageBucket: "your-domain-name.appspot.com",
+>  messagingSenderId: '<your-messaging-sender-id>'
+> };
 
-export const firebaseConfig = {
-  apiKey: "xxxxxxxxxx",
-  authDomain: "your-domain-name.firebaseapp.com",
-  databaseURL: "https://your-domain-name.firebaseio.com",
-  storageBucket: "your-domain-name.appspot.com",
-  messagingSenderId: '<your-messaging-sender-id>'
-};
+8. Configurar en consola de firebase tipo de autenticacion, activar Facebook y Mail
+9. Crear app en Facebook: https://developers.facebook.com/apps
+10. Activar servicio de Login
+11. Obtener ID y alias de la app
+12. cli> ionic serve
+13. Profit!
 
-# TODO: Agregar Login G+
+## TODO: Agregar Login G+
 
-# Requiere, ejecutar para verificar el siguiente comando en CLI. En caso de no contar con CLI 3 instalar y actualizar luego al correr ionic info.
+## Requiere
+
+Ejecutar para verificar el siguiente comando en CLI. En caso de no contar con CLI 3 instalar y actualizar luego al correr ionic info.
 
 ionic info
 
@@ -42,7 +51,9 @@ local packages:
     @ionic/cli-plugin-ionic-angular : 1.1.2
     Ionic Framework                 : ionic-angular 3.2.1
     
-# package.json
+## package.json
+
+Utilizar el que viene en el repo:
 
 >  "dependencies": {
 >    "@angular/common": "4.1.0",
