@@ -1,7 +1,10 @@
 # ionic-login-firebase-email-social
 Ejemplo de aplicacion Ionic 3 con login con Email, Facebook, Google+, utilizando Firebase como backend y plugins de Cordova.
 
-Agradecimientos a: https://github.com/angular https://github.com/rodrigoreal/ https://github.com/javebratt/
+Agradecimientos a: 
+* [AngularFire2](https://github.com/angular)
+* [rodrigoreal](https://github.com/rodrigoreal/)
+* [javebratt](https://github.com/javebratt/)
 
 Si se utiliza un proyecto previamente creado verificar que se este usando CLI 3.
 
