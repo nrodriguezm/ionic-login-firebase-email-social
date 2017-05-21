@@ -57,14 +57,23 @@ Utilizar el que viene en el repo:
 
 >  "dependencies": {
 >    "@angular/common": "4.1.0",
+
 >    "@angular/compiler": "4.1.0",
+
 >    "@angular/compiler-cli": "4.1.0",
+
 >    "@angular/core": "4.1.0",
+
 >    "@angular/forms": "4.1.0",
+
 >    "@angular/http": "4.1.0",
+
 >    "@angular/platform-browser": "4.1.0",
+
 >    "@angular/platform-browser-dynamic": "4.1.0",
+
 >    "@ionic-native/core": "^3.6.1",
+
 >    "@ionic-native/facebook": "^3.10.0",
 >    "@ionic-native/geolocation": "^3.6.1",
 >    "@ionic-native/keyboard": "^3.6.1",
