@@ -4,6 +4,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { Facebook } from '@ionic-native/facebook';
+import { GooglePlus } from '@ionic-native/google-plus';
 import firebase from 'firebase';
 
 // Providers
@@ -12,7 +13,7 @@ import {DataProvider} from './data';
 @Injectable()
 export class AuthProvider {
   user: any;
-  constructor(private af: AngularFireAuth, private afDatabase: AngularFireDatabase, private data: DataProvider, private platform: Platform, private Facebook: Facebook) {
+  constructor(private af: AngularFireAuth, private afDatabase: AngularFireDatabase, private data: DataProvider, private platform: Platform, private Facebook: Facebook, private GooglePlus: GooglePlus) {
 
   }
 
@@ -23,11 +24,6 @@ export class AuthProvider {
           console.log(authData);
           this.user = authData;
           observer.next(authData);
-          /*this.data.object('users/' + authData.uid).subscribe(userData => {
-            console.log(userData);
-            this.user = userData;
-            observer.next(userData);
-          });*/
         } else {
           observer.error();
         }
@@ -97,6 +93,35 @@ export class AuthProvider {
       } else {
         this.af.auth
           .signInWithPopup(new firebase.auth.FacebookAuthProvider()).then(
+            res => console.log(res)          
+          ).catch((error) => {
+            console.info("error", error);
+            observer.error(error);
+          });
+      }
+    });
+  }
+
+  loginWithGoogle() {
+    return Observable.create(observer => {
+      if (this.platform.is('cordova')) {
+        this.GooglePlus.login(['public_profile', 'email']).then(googleData => {
+          let provider = firebase.auth.GoogleAuthProvider.credential(googleData.authResponse.accessToken);
+          firebase.auth().signInWithCredential(provider).then(firebaseData => {
+            this.afDatabase.list('users').update(firebaseData.uid, {
+              name: firebaseData.displayName,
+              email: firebaseData.email,
+              provider: 'googleplus',
+              image: firebaseData.photoURL
+            });
+            observer.next();
+          });
+        }, error => {
+          observer.error(error);
+        });
+      } else {
+        this.af.auth
+          .signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(
             res => console.log(res)          
           ).catch((error) => {
             console.info("error", error);

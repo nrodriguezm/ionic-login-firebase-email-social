@@ -2,16 +2,18 @@
   <div class="logo">
     <div class="logo-icon">
       <img src="assets/images/logo.png" />     
-    </div>
-    
+    </div>    
   </div>
-
 
   <button ion-button block class="facebook-btn" (click)="loginUserWithFacebook()">
     <ion-icon name="logo-facebook"></ion-icon>
     Acceder con Facebook
   </button>
 
+  <button ion-button block color="danger" (click)="loginUserWithGoogle()">
+    <ion-icon name="logo-google"></ion-icon>
+    Acceder con Google+
+  </button>
 
   <button ion-button color="light" class="sign-up-btn" (click)="openSignUpPage()">Registrarme</button>
   <button ion-button color="light" class="log-in-btn" (click)="openLoginPage()" color="secondary">Acceder</button>

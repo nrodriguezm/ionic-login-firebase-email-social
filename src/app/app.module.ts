@@ -15,6 +15,9 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 // Facebook
 import { Facebook } from '@ionic-native/facebook';
 
+// Google+
+import { GooglePlus } from '@ionic-native/google-plus';
+
 // Providers
 import { DataProvider } from '../providers/data';
 import { AuthProvider } from '../providers/auth';
@@ -50,7 +53,8 @@ export const firebaseConfig = {
     Keyboard, 
     SplashScreen, 
     StatusBar,
-    Facebook
+    Facebook,
+    GooglePlus
   ]
 })
 export class AppModule {}

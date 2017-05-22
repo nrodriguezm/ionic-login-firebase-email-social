@@ -37,5 +37,13 @@ export class AuthPage {
       this.error = err;
     });
   }
+
+  loginUserWithGoogle() {
+    this.auth.loginWithGoogle().subscribe(data => {
+      this.navCtrl.setRoot('TabsPage');
+    }, err => {
+      this.error = err;
+    });
+  }
   
 }
