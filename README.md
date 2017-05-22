@@ -16,7 +16,7 @@ Utiliza
 TODO
 - [x] Email
 - [x] Facebook
-- [ ] Google+ 
+- [x] Google+ 
 - [ ] Twitter
 
 
@@ -50,7 +50,7 @@ TODO
 
 Con esto podemos probar la app desde nuestro navegador en forma local, para poder publicar la app debemos agregar en la Configuracion de la App en Facebook la plataforma Android en Configuracion y luego agregar el nombre de la App con la que publicamos en Android (identificador definido en config.xml en Ionic) y el hash de la clave con la cual firmamos el release de la app para poder subir a Play Store. Para terminar debemos publicar la app en el panel de Facebook ya que por defecto viene en modo desarrollo.
 
-## Instalacion Google+ (Incompleto!)
+## Instalacion Google+
 1. Firebase ya es un proyecto de aplicacion de Google por lo que solo debemos agregar la huella SHA-1 para Android en la configuracion del proyecto. Vamos a Project Settings en el panel de Firebase y hacemos clic en "Add Firebase to your Android app". Aquí vamos a ingresar el nombre de la app definido en el config.xml y la huella SHA-1.
 2. Obtenemos el nombre del proyecto ionic definido en el archivo config.xml, en la linea donde esta <widget id=".."...> por ejemplo: com.demologin.social, este nombre lo pegamos en el campo: "Android package name"
 3. Para obtener la huella SHA-1 debetemos tener el JDK instalado y la ruta en el PATH, asi podemos ejecutar la herramienta keytool desde la consola.
