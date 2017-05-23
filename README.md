@@ -65,6 +65,14 @@ Con esto podemos probar la app desde nuestro navegador en forma local, para pode
 11. cli> ionic serve
 12. Profit!
 
+Error 12501 al ejecutar: cordova run android: Para correr la aplicacion en un dispositivo local debemos indicar una llave de depurado para que el servicio de Google+ funcione. Esto lo hacemos generando un archivo debug-signing.properties similar al utilizado para hacer el build de produccion. Con este archivo ubicado en la carpeta de plataforma Android al hacer el cordova run el plugin podra identificar la huella SHA-1 que utilizamos antes. El archivo puede contener lo siguiente:
+
+storeFile=debug.keystore
+keyAlias=alias_name
+keyPassword=1234567890
+storePassword=1234567890
+
+
 
 ## Requiere
 
