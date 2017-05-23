@@ -13,6 +13,10 @@ import {DataProvider} from './data';
 @Injectable()
 export class AuthProvider {
   user: any;
+
+  // Complete this ID, get it from Firebase console, Authentication > SIGN-IN Method > Google (enabled) > Web Client ID
+  googleWebClientId: string = '______________________.apps.googleusercontent.com';
+  
   constructor(private af: AngularFireAuth, private afDatabase: AngularFireDatabase, private data: DataProvider, private platform: Platform, private Facebook: Facebook, private GooglePlus: GooglePlus) {
 
   }
@@ -105,8 +109,8 @@ export class AuthProvider {
   loginWithGoogle() {
     return Observable.create(observer => {
       if (this.platform.is('cordova')) {
-        this.GooglePlus.login(['public_profile', 'email']).then(googleData => {
-          let provider = firebase.auth.GoogleAuthProvider.credential(googleData.authResponse.accessToken);
+        this.GooglePlus.login({webClientId: this.googleWebClientId}).then(googleData => {
+          let provider = firebase.auth.GoogleAuthProvider.credential(googleData.idToken);
           firebase.auth().signInWithCredential(provider).then(firebaseData => {
             this.afDatabase.list('users').update(firebaseData.uid, {
               name: firebaseData.displayName,
